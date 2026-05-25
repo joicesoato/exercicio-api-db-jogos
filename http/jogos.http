@@ -1,0 +1,22 @@
+@url = http://localhost:3000/jogos
+
+GET {{url}}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+  "titulo": "God of War",
+  "idGenero":3
+}
+
+###
+
+###relacionar jogo com a plataforma
+POST {{url}}/1/plataformas
+Content-Type: application/json
+
+{
+  "plataformaId": 2
+}

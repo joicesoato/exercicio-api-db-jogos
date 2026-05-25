@@ -1,4 +1,4 @@
-@url = http://localhost:3000/generos
+@url = http://localhost:3000/plataformas
 
 GET {{url}}
 
@@ -8,5 +8,5 @@ POST {{url}}
 Content-Type: application/json
 
 {
-  "nome": "Fantasia"
+  "nome": "Xbox 360"
 }

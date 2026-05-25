@@ -6,23 +6,27 @@ const router = Router();
 router.post("/", async (req, res) => {
   const { nome } = req.body;
 
-  const genero = await prisma.genero.create({
+  const plataforma = await prisma.plataforma.create({
     data: {
       nome,
     },
   });
 
-  res.status(201).json(genero);
+  res.status(201).json(plataforma);
 });
 
 router.get("/", async (_, res) => {
-  const generos = await prisma.genero.findMany({
+  const plataformas = await prisma.plataforma.findMany({
     include: {
-      jogos: true,
+      jogos: {
+        include: {
+          jogo: true,
+        },
+      },
     },
   });
 
-  res.json(generos);
+  res.json(plataformas);
 });
 
 export default router;
